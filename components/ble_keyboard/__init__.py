@@ -202,6 +202,7 @@ BLEKeyboardReleaseAction = ble_keyboard_ns.class_(
     f"{DOMAIN}.release",
     BLEKeyboardReleaseAction,
     maybe_simple_id(OPERATION_BASE_SCHEMA),
+    synchronous=False
 )
 async def ble_keyboard_release_to_code(
     config: dict, action_id: ID, template_arg: TemplateArguments, args: list
@@ -231,6 +232,7 @@ BLEKeyboardPrintAction = ble_keyboard_ns.class_(ACTION_PRINT_CLASS, automation.A
             cv.Required(CONF_TEXT): cv.templatable(cv.string_strict),
         }
     ),
+    synchronous=False
 )
 async def ble_keyboard_print_to_code(
     config: dict, action_id: ID, template_arg: TemplateArguments, args: list
@@ -272,6 +274,7 @@ BLEKeyboardPressAction = ble_keyboard_ns.class_(ACTION_PRESS_CLASS, automation.A
             ),
         }
     ),
+    synchronous=False
 )
 async def ble_keyboard_press_to_code(
     config: dict, action_id: ID, template_arg: TemplateArguments, args: list
@@ -315,6 +318,7 @@ BLEKeyboardCombinationAction = ble_keyboard_ns.class_(
             ),
         }
     ),
+    synchronous=False
 )
 async def ble_keyboard_combination_to_code(
     config: dict, action_id: ID, template_arg: TemplateArguments, args: list
@@ -345,6 +349,7 @@ BLEKeyboardStartAction = ble_keyboard_ns.class_(ACTION_START_CLASS, automation.A
     f"{DOMAIN}.start",
     BLEKeyboardStartAction,
     maybe_simple_id(OPERATION_BASE_SCHEMA),
+    synchronous=False
 )
 async def ble_keyboard_start_to_code(
     config: dict, action_id: ID, template_arg: TemplateArguments, args: list
@@ -370,6 +375,7 @@ BLEKeyboardStopAction = ble_keyboard_ns.class_(ACTION_STOP_CLASS, automation.Act
     f"{DOMAIN}.stop",
     BLEKeyboardStopAction,
     maybe_simple_id(OPERATION_BASE_SCHEMA),
+    synchronous=False
 )
 async def ble_keyboard_stop_to_code(
     config: dict, action_id: ID, template_arg: TemplateArguments, args: list
