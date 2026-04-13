@@ -98,8 +98,8 @@ bool Esp32BleKeyboard::is_connected() {
 }
 
 void Esp32BleKeyboard::update_timer() {
-  this->cancel_timeout((const std::string) TAG);
-  this->set_timeout((const std::string) TAG, release_delay_, [this]() { this->release(); });
+  this->cancel_timeout(TAG);
+  this->set_timeout(TAG, release_delay_, [this]() { this->release(); });
 }
 
 void Esp32BleKeyboard::press(std::string message) {
@@ -155,7 +155,7 @@ void Esp32BleKeyboard::release() {
     return;
   }
   if (this->is_connected()) {
-    this->cancel_timeout((const std::string) TAG);
+    this->cancel_timeout(TAG);
     bleKeyboard.releaseAll();
   }
 }
