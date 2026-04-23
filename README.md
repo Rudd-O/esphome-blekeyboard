@@ -121,13 +121,11 @@ switch:
       - globals.set:
            id: keyboard_enabled
            value: "true"
-          id(keyboard_enabled) = true;
     turn_off_action:
       - ble_keyboard.stop: le_keyboard
       - globals.set:
            id: keyboard_enabled
            value: "false"
-          id(keyboard_enabled) = false;
 ```
 
 When toggled on, the switch will start the keyboard and begin advertising
