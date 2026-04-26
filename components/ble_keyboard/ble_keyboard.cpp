@@ -27,7 +27,8 @@ void Esp32BleKeyboard::setup() {
   // Set security settings for bonding so phones/tablets will properly reconnect on device reboot
   NimBLEDevice::setSecurityAuth(true, true, true);
   NimBLEDevice::setSecurityPasskey(this->pairing_code_);
-  NimBLEDevice::setSecurityIOCap(BLE_HS_IO_DISPLAY_ONLY);
+  // Indicate to peer device that there is no way to confirm a pairing code.
+  NimBLEDevice::setSecurityIOCap(BLE_HS_IO_NO_INPUT_OUTPUT);
   NimBLEDevice::setSecurityInitKey(3);
 
   // Set BLE Tx power to max to prevent disconnects
